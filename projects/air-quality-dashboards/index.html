@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><script src="/_astro/bootstrap.bundle.min.BugjOlI3.js"></script><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> --><link rel="sitemap" href="/sitemap-index.xml"><meta name="generator" content="Astro v5.8.1"><!-- Canonical URL --><link rel="canonical" href="https://hobby.rapp-martin.de/projects/air-quality-dashboards/"><!-- Primary Meta Tags --><title>Home Air Quality Sensing</title><meta name="title" content="Home Air Quality Sensing"><meta name="description" content="Home Air Quality Sensing"><link rel="stylesheet" href="/_astro/about.BeAhyWGp.css">
+<style>.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{max-width:100%;margin:auto;padding:.5em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em;text-wrap:balance}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{margin-top:1ex;font-style:italic}
+</style></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Martin Rapp</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> <div class="social-links" data-astro-cid-3ef6ksr2> <a href="https://github.com/ma-rapp" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>GitHub</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </nav> </header>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img width="1020" height="510" src="/media/air-quality-dashboards/cover.png" alt="" data-astro-cid-bvzihdzo> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <h1 data-astro-cid-bvzihdzo>Home Air Quality Sensing</h1> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2025-04-13T00:00:00.000Z"> April 13, 2025 </time> <div class="last-updated-on" data-astro-cid-bvzihdzo>
+Last updated on <time datetime="2025-07-03T00:00:00.000Z"> July 3, 2025 </time> </div> </div> <hr data-astro-cid-bvzihdzo> </div>  <p>This project is about building an air quality sensor and corresponding dashboards.
+The main goals are to</p>
+<ul>
+<li>measure the air quality (CO₂, temperature, and humidity) at several locations in our appartment,</li>
+<li>display the data on an interactive web dashboard, and</li>
+<li>display the data on an e-Paper display in our living room.</li>
+</ul>
+<p>This article describes the hardware and software used for this project.
+The following figure shows all involved components and the information flow from the sensors via a server to the dashboards.</p>
+<a class="zoomimage-text" onclick="document.getElementById('1bcc99ae-31de-4137-af59-393ef28ae3fe-large').style.display = &#34;block&#34;; return false;"> <img src="/media/air-quality-dashboards/overview.png" alt="Overview image"> </a> <div class="zoomimage-large" id="1bcc99ae-31de-4137-af59-393ef28ae3fe-large"> <a onclick="document.getElementById('1bcc99ae-31de-4137-af59-393ef28ae3fe-large').style.display = &#34;none&#34;; return false;"> <img src="/media/air-quality-dashboards/overview.png" alt="Overview image"> <span class="zoomimage-close"></span> </a> </div>
+<h2 id="sensor-modules">Sensor Modules</h2>
+<p>The sensor modules are based on</p>
+<ul>
+<li>an MH‑Z19C CO₂ sensor,</li>
+<li>a DHT22 temperature and humidity sensor, and</li>
+<li>an Arduino Nano ESP32 board with WiFi.</li>
+</ul>
+<p>Each sensor module is assigned a separate ID via a DIP switch, which is used to identify the sensor measurements in the database and on the dashboard.
+A sensor module is powered by a 5V power supply, which is connected to the Arduino Nano ESP32 board.
+All components are connected on a custom PCB.
+The following image shows a sensor module, fully assembled with the Arduino Nano ESP32 and the MH‑Z19C, and mounted in a 3D-printed frame to mount it.
+This frame is designed to be mounted somewhere where it is not visible, e.g., behind a cupboard, hence the simple design.
+I have observed in an earlier version of the PCB that placing the DHT22 temperature sensor directly next to the MH‑Z19C sensor leads to an increase in the temperature readings by about 1°C.
+This is because the MH‑Z19C sensor uses an internal heater.
+To avoid that, the DHT22 sensor is placed far away from the PCB and connected to the PCB via a 3-wire cable.</p>
+
+<div id="carousel-sensor" class="carousel slide carousel-fade carousel-dark"><div class="carousel-indicators"> <button type="button" data-bs-target="#carousel-sensor" data-bs-slide-to="0" class="active" aria-current="page" aria-label="Image of the sensor module (swipe right for annotations)"></button><button type="button" data-bs-target="#carousel-sensor" data-bs-slide-to="1" aria-label="Annotated image of the sensor module"></button> </div><div class="carousel-inner"> <div class="carousel-item active"> <img src="/media/air-quality-dashboards/sensor.jpg" class="d-block w-100 img-fluid" alt="Image of the sensor module (swipe right for annotations)"/><div class="carousel-caption d-none d-md-block">Image of the sensor module (swipe right for annotations)</div> </div><div class="carousel-item"> <img src="/media/air-quality-dashboards/sensor-annotated.jpg" class="d-block w-100 img-fluid" alt="Annotated image of the sensor module"/><div class="carousel-caption d-none d-md-block">Annotated image of the sensor module</div> </div> </div><button class="carousel-control-prev" type="button" data-bs-target="#carousel-sensor" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carousel-sensor" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button></div>
+<p>The software for the sensor module is based on the Arduino framework.
+The logic is quite simple and illustrated in the flowchart below.
+The main loop reads the CO₂ and temperature/humidity values from the sensors every minute and sends them to the InfluxDB database via WiFi.
+Additional features include calibration of the MH‑Z19C sensor by setting the sensor ID = 7.</p>
+<a class="zoomimage-text" onclick="document.getElementById('019ce263-794f-4dc9-a386-508450d4488f-large').style.display = &#34;block&#34;; return false;"> <img src="/media/air-quality-dashboards/sensor-software-flow.png" alt="Control flow of the sensor software"> </a> <div class="zoomimage-large" id="019ce263-794f-4dc9-a386-508450d4488f-large"> <a onclick="document.getElementById('019ce263-794f-4dc9-a386-508450d4488f-large').style.display = &#34;none&#34;; return false;"> <img src="/media/air-quality-dashboards/sensor-software-flow.png" alt="Control flow of the sensor software"> <span class="zoomimage-close"></span> </a> </div>
+<p>The electronics (schematic and PCB design) and software sources are provided in the repositories linked at the <a href="#sources">bottom of this page</a>.</p>
+<h2 id="server-influxdb-and-grafana-dashboard">Server: InfluxDB and Grafana Dashboard</h2>
+<p>The InfluxDB and Grafana server run on a Raspberry Pi 5 with 8GB RAM.
+Here is a screenshot of the Grafana dashboard for illustration.</p>
+<a class="zoomimage-text" onclick="document.getElementById('7838e64a-de59-4f49-9518-1779036ace93-large').style.display = &#34;block&#34;; return false;"> <img src="/media/air-quality-dashboards/grafana-dashboard.png" alt="Grafana dashboard"> </a> <div class="zoomimage-large" id="7838e64a-de59-4f49-9518-1779036ace93-large"> <a onclick="document.getElementById('7838e64a-de59-4f49-9518-1779036ace93-large').style.display = &#34;none&#34;; return false;"> <img src="/media/air-quality-dashboards/grafana-dashboard.png" alt="Grafana dashboard"> <span class="zoomimage-close"></span> </a> </div>
+<h2 id="dashboard-on-an-e-paper-display">Dashboard on an e-Paper Display</h2>
+<p>In addition to the Grafana dashboard, I also built a dashboard for my e-Paper display, which is mounted in our living room.
+The dashboard displays only the measurements of the sensor in the living room.
+For more details on how the e-Paper display and the corresponding server component are built, see the article about the <a href="/projects/epaper-hiking-quiz">weekly hiking quiz</a>.
+The following image shows the e-Paper display with the dashboard.</p>
+<a class="zoomimage-text" onclick="document.getElementById('f0702cbe-1992-48f4-8c6f-01f362aeed2d-large').style.display = &#34;block&#34;; return false;"> <img src="/media/air-quality-dashboards/epaper-frame.jpg" alt="Image of the dashboard on the e-Paper display"> </a> <div class="zoomimage-large" id="f0702cbe-1992-48f4-8c6f-01f362aeed2d-large"> <a onclick="document.getElementById('f0702cbe-1992-48f4-8c6f-01f362aeed2d-large').style.display = &#34;none&#34;; return false;"> <img src="/media/air-quality-dashboards/epaper-frame.jpg" alt="Image of the dashboard on the e-Paper display"> <span class="zoomimage-close"></span> </a> </div>
+<p>The software sources for this part of the project are also provided in the repositories linked at the <a href="#sources">bottom of this page</a>.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>I am quite happy with the result.
+Finally, this project integrates nicely with the previously built <a href="/projects/epaper-hiking-quiz">weekly hiking quiz</a> on the e-Paper display.
+I am barely using the Grafana dashboard, but I am looking at the e-Paper display a lot.</p>
+<p>Nevertheless, there are a few things that <strong>I would do differently in hindsight</strong>:</p>
+<ul>
+<li><strong>Time series database</strong>: I used InfluxDB 2, which comes with a rather unintuitive query language. Unfortunately, InfluxDB 2 has since been replaced by InfluxDB 3, which is not backwards compatible.
+As a result, I now need to adapt several components, including parts of the sensor module software, the Grafana dashboard, and the code for rendering the e-Paper display view.
+InfluxDB 3 also introduces a complex product portfolio, with various deployment options and associated limitations, which I honestly find quite confusing.
+Overall, I would likely choose a different time series database, ideally in combination with a message broker like MQTT to decouple some of the components.</li>
+<li><strong>CO₂ sensor</strong>: I would look for a different CO₂ sensor.
+The auto-calibration feature of the MH‑Z19C is not very useful in inside environments, as it requires the sensor to be exposed to fresh air every 24 hours.
+I have observed significant jumps in the CO₂ values when the sensor is not exposed to fresh air for a while, e.g., when we are not home for a few days.
+Manual calibration drifts slowly over time, but there are large variations between sensors, where some barly drift, while others drift significantly.
+I am, however, not sure if there is a better alternative to the MH‑Z19C that is easy to use but still not too expensive.</li>
+</ul>
+
+<p><strong>Why not simply buy existing sensors?</strong>
+The simple answer is: because I wanted to build it myself—partly because I enjoy the process, partly to learn, and partly because I wanted to have full control over the features.</p>
+<h2 id="sources">Sources</h2>
+<p>You can access the sources at the following links.
+This includes the software, electronics, and hardware design files of the sensors, as well as the software for the e-Paper display.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Sensor Electronics and Software</td><td><a href="https://github.com/ma-rapp/air-quality-sensors">https://github.com/ma-rapp/air-quality-sensors</a></td></tr><tr><td>e-Paper Server Software</td><td><a href="https://github.com/ma-rapp/epaper-display-server">https://github.com/ma-rapp/epaper-display-server</a></td></tr><tr><td>e-Paper Panel</td><td><a href="https://github.com/ma-rapp/epaper-display-panel">https://github.com/ma-rapp/epaper-display-panel</a></td></tr></tbody></table>  <hr data-astro-cid-bvzihdzo>  <span data-astro-cid-bvzihdzo>
+If you have questions or feedback, please don't hesitate to send me a mail:
+</span> <span id="mail-placeholder" data-astro-cid-bvzihdzo>Your browser does not support Javascript</span><span id="mail" data-astro-cid-bvzihdzo></span><script type="module">function d(){let t=new TextDecoder,e=new Uint8Array([109,111,99,46,108,105,97,109,103,64,112,112,97,114,46,110,105,116,114,97,109,46,121,98,98,111,104]);e.reverse(),document.getElementById("mail").innerHTML='<a href="mailto: '+t.decode(e)+'">'+t.decode(e)+"</a>",document.getElementById("mail-placeholder").remove()}d();</script> </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2025 Martin Rapp. All rights reserved.
+<div class="social-links" data-astro-cid-sz7xmlte></div> </footer>  </body></html>
